@@ -5,12 +5,9 @@
 #include <arpa/inet.h>
 #include "auth/auth.h"
 #include "flights/flights.h"
+#include "client_utils.h"
 
 #define PORT 9999
-#define BUFFER_SIZE 1024
-
-void send_request(int client_socket, char *action, char *data);
-void handle_response(int client_socket);
 
 int main() {
     int client_socket;
@@ -36,7 +33,10 @@ int main() {
     while (1) {
         printf("1. Login\n");
         printf("2. Register\n");
-        printf("3. Exit\n");
+        printf("3. Book Flight\n");
+        printf("4. Cancel Flight\n");
+        printf("5. View Flights\n");
+        printf("6. Exit\n");
 
         printf("Enter choice: ");
         scanf("%s", action);
@@ -46,6 +46,12 @@ int main() {
         } else if (strcmp(action, "2") == 0) {
             register_user(client_socket);
         } else if (strcmp(action, "3") == 0) {
+            book_flight(client_socket);
+        } else if (strcmp(action, "4") == 0) {
+            cancel_flight(client_socket);
+        } else if (strcmp(action, "5") == 0) {
+            view_flights(client_socket);
+        } else if (strcmp(action, "6") == 0) {
             break;
         } else {
             printf("Invalid choice\n");

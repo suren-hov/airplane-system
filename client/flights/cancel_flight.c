@@ -2,8 +2,7 @@
 #include <string.h>
 #include <unistd.h>
 #include "flights.h"
-
-#define BUFFER_SIZE 1024
+#include "../client_utils.h"
 
 void cancel_flight(int client_socket) {
     char flight_id[BUFFER_SIZE], passenger_details[BUFFER_SIZE], data[BUFFER_SIZE];

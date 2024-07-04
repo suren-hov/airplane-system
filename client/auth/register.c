@@ -2,8 +2,7 @@
 #include <string.h>
 #include <unistd.h>
 #include "auth.h"
-
-#define BUFFER_SIZE 1024
+#include "../client_utils.h"
 
 void register_user(int client_socket) {
     char username[BUFFER_SIZE], password[BUFFER_SIZE], data[BUFFER_SIZE];
