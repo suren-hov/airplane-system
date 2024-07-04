@@ -15,30 +15,18 @@ CLIENT_AUTH_DIR = $(CLIENT_DIR)/auth
 CLIENT_FLIGHTS_DIR = $(CLIENT_DIR)/flights
 
 # Server sources and objects
-SERVER_SRCS = $(SERVER_DIR)/server.c \
-              $(SERVER_AUTH_DIR)/login.c \
-              $(SERVER_AUTH_DIR)/register.c \
-              $(SERVER_BOOK_FLIGHTS_DIR)/book_flight.c \
-              $(SERVER_BOOK_FLIGHTS_DIR)/booked_flights.c \
-              $(SERVER_BOOK_FLIGHTS_DIR)/cancel_flight.c \
-              $(SERVER_FLIGHTS_DIR)/create_flight.c \
-              $(SERVER_FLIGHTS_DIR)/delete_flight.c \
-              $(SERVER_FLIGHTS_DIR)/get_flights.c \
-              $(SERVER_FLIGHTS_DIR)/update_flight.c \
-              $(SERVER_USERS_DIR)/delete_user.c \
-              $(SERVER_USERS_DIR)/get_user_info.c \
-              $(SERVER_USERS_DIR)/update_user_info.c \
-              $(SERVER_DIR)/menu.c
+SERVER_SRCS = $(wildcard $(SERVER_DIR)/*.c) \
+              $(wildcard $(SERVER_AUTH_DIR)/*.c) \
+              $(wildcard $(SERVER_BOOK_FLIGHTS_DIR)/*.c) \
+              $(wildcard $(SERVER_FLIGHTS_DIR)/*.c) \
+              $(wildcard $(SERVER_USERS_DIR)/*.c)
 
 SERVER_OBJS = $(SERVER_SRCS:.c=.o)
 
 # Client sources and objects
-CLIENT_SRCS = $(CLIENT_DIR)/client.c \
-              $(CLIENT_AUTH_DIR)/login.c \
-              $(CLIENT_AUTH_DIR)/register.c \
-              $(CLIENT_FLIGHTS_DIR)/book_flight.c \
-              $(CLIENT_FLIGHTS_DIR)/cancel_flight.c \
-              $(CLIENT_FLIGHTS_DIR)/view_flights.c
+CLIENT_SRCS = $(wildcard $(CLIENT_DIR)/*.c) \
+              $(wildcard $(CLIENT_AUTH_DIR)/*.c) \
+              $(wildcard $(CLIENT_FLIGHTS_DIR)/*.c)
 
 CLIENT_OBJS = $(CLIENT_SRCS:.c=.o)
 
