@@ -27,7 +27,8 @@ SERVER_SRCS = $(SERVER_DIR)/server.c \
               $(SERVER_FLIGHTS_DIR)/update_flight.c \
               $(SERVER_USERS_DIR)/delete_user.c \
               $(SERVER_USERS_DIR)/get_user_info.c \
-              $(SERVER_USERS_DIR)/update_user_info.c
+              $(SERVER_USERS_DIR)/update_user_info.c \
+              $(SERVER_DIR)/menu.c
 
 SERVER_OBJS = $(SERVER_SRCS:.c=.o)
 

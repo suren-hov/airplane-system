@@ -8,6 +8,7 @@
 #include "book_flights/book_flights.h"
 #include "flights/flights.h"
 #include "users/users.h"
+#include "server.h"
 
 #define PORT 9999
 #define MAX_CLIENTS 100
@@ -16,7 +17,6 @@
 pthread_mutex_t lock;
 
 void *handle_client(void *client_socket);
-void process_request(char *request, char *response);
 
 int main() {
     int server_socket, client_socket;
@@ -87,8 +87,3 @@ void *handle_client(void *client_socket) {
     pthread_exit(NULL);
 }
 
-void process_request(char *request, char *response) {
-    // Process request and generate appropriate response
-    // ...
-    strcpy(response, "Request processed");
-}
