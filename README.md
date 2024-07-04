@@ -37,7 +37,7 @@ The server manages these requests concurrently, updates flight availability, sto
 
 ### Prerequisites
 
-- Python 3.x
+- C Compiler (e.g., gcc)
 
 ### Clone the Repository
 
