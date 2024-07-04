@@ -71,4 +71,11 @@ cd airplane-management-system
 │   ├── client.c
 │   ├── auth
 │   │   ├── login.c
-│   │
+│   │   ├── register.c
+│   │   ├── auth.h
+│   ├── flights
+│   │   ├── book_flight.c
+│   │   ├── cancel_flight.c
+│   │   ├── view_flights.c
+│   │   ├── flights.h
+└── README.md
