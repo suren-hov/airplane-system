@@ -19,11 +19,7 @@ The Airplane Management System is a client-server application designed to manage
   - Options to book flights, check availability, view passenger details, etc.
   - Handles user input for various operations.
   - Displays appropriate messages and responses from the server.
-
-- **Additional Features (Optional)**:
-  - Ticketing and boarding passes.
-  - Admin panel to manage flight schedules and ticket prices.
-  - Secure admin access with authentication.
+  - Authentication and admin functionalities.
 
 ## Example Scenario
 
@@ -44,3 +40,35 @@ The server manages these requests concurrently, updates flight availability, sto
 ```bash
 git clone https://github.com/yourusername/airplane-management-system.git
 cd airplane-management-system
+
+## Project Structure
+
+.
+├── server
+│   ├── server.c
+│   ├── auth
+│   │   ├── login.c
+│   │   ├── register.c
+│   │   ├── auth.h
+│   ├── book_flights
+│   │   ├── book_flight.c
+│   │   ├── booked_flights.c
+│   │   ├── cancel_flight.c
+│   │   ├── book_flights.h
+│   ├── flights
+│   │   ├── create_flight.c
+│   │   ├── delete_flight.c
+│   │   ├── get_flights.c
+│   │   ├── update_flight.c
+│   │   ├── flights.h
+│   ├── users
+│   │   ├── delete_user.c
+│   │   ├── get_user_info.c
+│   │   ├── update_user_info.c
+│   │   ├── users.h
+│   ├── menu.c
+├── client
+│   ├── client.c
+│   ├── auth
+│   │   ├── login.c
+│   │
